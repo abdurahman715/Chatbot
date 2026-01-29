@@ -2,6 +2,25 @@
 <html>
   <head>
     <title>React Basics</title>
+    <style>
+      .send-button {
+        background-color: rgb(25, 134, 84);
+        color: white;
+        padding: 12px 20px;
+        margin-left: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .input-container {
+        padding: 12px 15px;
+        border-radius: 10px;
+        border-color: black;
+        border-width: 1px;
+        font-size: 15px;
+      }
+    </style>
   </head>
   <body>
     <div class="js-container"></div>
@@ -46,8 +65,11 @@
               size="30"
               onChange={saveInputText}
               value={inputText}
+              className="input-container"
             />
-            <button onClick={sendMessage}>Send</button>
+            <button onClick={sendMessage} className="send-button">
+              Send
+            </button>
           </>
         );
       }
