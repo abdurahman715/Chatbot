@@ -19,6 +19,15 @@
         border-color: black;
         border-width: 1px;
         font-size: 15px;
+        flex-grow: 1;
+      }
+      .chat-input-container {
+        display: flex;
+      }
+      .app-container {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
     </style>
   </head>
@@ -58,7 +67,7 @@
           setInputText("");
         }
         return (
-          <>
+          <div className="chat-input-container">
             <input
               type="text"
               placeholder="Send a message to Chatbot"
@@ -70,7 +79,7 @@
             <button onClick={sendMessage} className="send-button">
               Send
             </button>
-          </>
+          </div>
         );
       }
       function ChatMessage({ message, sender }) {
@@ -125,13 +134,13 @@
           },
         ]);
         return (
-          <>
+          <div className="app-container">
             <ChatInput
               chatMessages={chatMessages}
               setChatMessages={setChatMessages}
             />
             <ChatMessages chatMessages={chatMessages} />
-          </>
+          </div>
         );
       }
       const container = document.querySelector(".js-container");
